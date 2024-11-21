@@ -1,23 +1,21 @@
 import SwiftUI
 
 struct DayLogView: View {
+    let day: DayModel
+    
     var body: some View {
-        List {
-            Section {
-                ForEach(1...3, id: \.self) { log in
-                    VStack {
-                        Text("log headline\(log)")
-                            .font(.headline)
-                        Text("log description")
-                    }
+        VStack {
+            List(day.logs) { log in
+                VStack(alignment: .leading){
+                    Text("log headline\(log.name)")
+                        .font(.headline)
+                    Text("\(log.description)")
                 }
-            } header: {
-                Text("Logs")
             }
         }
     }
 }
 
 #Preview {
-    DayLogView()
+    DayLogView(day: MockData.sampleDays[0])
 }

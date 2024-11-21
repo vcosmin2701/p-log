@@ -4,7 +4,10 @@ struct ContentView: View {
     var body: some View {
         TabView {
             Tab("Home", systemImage: "house") {
-                LogScreenView()
+                HomeView()
+            }
+            Tab("Weeks", systemImage: "calendar") {
+                WeekView()
             }
             Tab("Summary", systemImage: "pencil") {
                 EmptyView()
