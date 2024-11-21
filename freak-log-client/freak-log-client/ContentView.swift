@@ -6,8 +6,10 @@ struct ContentView: View {
             Tab("Home", systemImage: "house") {
                 LogScreenView()
             }
+            Tab("Summary", systemImage: "pencil") {
+                EmptyView()
+            }
         }
-        
     }
 }
 
